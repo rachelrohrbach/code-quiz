@@ -1,0 +1,41 @@
+html,
+body,
+.wrapper {
+	height: 100%;
+	margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+}
+
+.highscore {
+    justify-content: flex-start;
+}
+
+#timer {
+    justify-content: flex-end;
+}
+
+.wrapper {
+	padding-top: 30px;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: white;
+    max-width: 800px;
+    padding: 30px 40 px;
+}
