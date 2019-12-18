@@ -39,3 +39,16 @@ header {
     max-width: 800px;
     padding: 30px 40 px;
 }
+
+.mybtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+    width: 220px;
+    font-size: 14px;
+    font-weight: 20px;
+    color: white;
+    text-align: left;
+
+}
