@@ -40,15 +40,20 @@ header {
     padding: 30px 40 px;
 }
 
-.mybtn {
+.answer-button {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
     margin: 10px;
-    width: 220px;
-    font-size: 14px;
-    font-weight: 20px;
+    width: 250px; 
     color: white;
     text-align: left;
+    background-color: #007bff;
+    border-color: #007bff;
 
 }
