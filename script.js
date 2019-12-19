@@ -8,35 +8,46 @@ function populateQuestion(indexOfQuestion) {
     $('#answer').empty();
 
     for (var i = 0; i < answers.length; i++) {
-        $('#answer').append('<a class=" mybtn btn btn-primary" role="button">' + answers[i] + '</a>');
+        var answerBtn = $('<button>' + answers[i] + '</button>');
+        $('#answer').append(answerBtn);
+        answerBtn.addClass("answer-button");
     }
 }
 
 $(document).ready(function () {
     $("#content").show();
     $("#questiondiv").hide();
-    var currentQuestion = 0;
+    $("#scorediv").hide();
+    var currentQuestionIndex = 0;
 
     $('#start').on('click', function () {
         $("#content").hide();
         $("#questiondiv").show();
+        $("#scorediv").hide();
 
-        populateQuestion(currentQuestion);
+        populateQuestion(currentQuestionIndex);
         setTime();
     });
-    $('#questiondiv').on('click', '.mybtn', function () {
+    $('#questiondiv').on('click', 'button.answer-button', function () {
         var selectedAnswer = $(this).text();
 
-        if (questions[currentQuestion].correctAnswer === selectedAnswer) {
+        if (questions[currentQuestionIndex].correctAnswer === selectedAnswer) {
             $('#result').text('Correct!');
         } else {
             $('#result').text('Wrong!');
         }
 
-        currentQuestion++;
+        currentQuestionIndex++;
 
-        populateQuestion(currentQuestion);
+        if (currentQuestionIndex > questions.length - 1) {
+            $("#content").hide();
+            $("#questiondiv").hide();
+            $("#scorediv").show();
+        } else {
+            populateQuestion(currentQuestionIndex);
+        }
 
+        
     });
     var timerEl = document.getElementById('timer');
 
@@ -52,17 +63,34 @@ $(document).ready(function () {
 
             // if secondsOnQuestion === 0 then go to next question
             if (secondsOnQuestion === 0) {
-                currentQuestion++;
-                populateQuestion(currentQuestion);
+                currentQuestionIndex++;
+                populateQuestion(currentQuestionIndex);
                 secondsOnQuestion = 15;
             }
 
-            // if (secondsLeft === 15 || questions[currentQuestion].correctAnswer === selectedAnswer) {
-            // clearInterval(timerInterval);
-            // sendMessage();
-            // }
+            // once last question is answered, stop interval and save time left as high score
+            if (secondsLeft === 0 || currentQuestionIndex === questions.length) {
+                var timeScore = secondsLeft;
+                clearInterval(timerInterval);
+            }
+        
+            var finalScore =$('#score');
+            finalScore.text('Your final score is ' + timeScore + '.');
+            $('#score').append(finalScore);
+    
 
         }, 1000);
+
+       
+
+
+
+        // after the final question OR if the time runs out replace the questionDiv with a new div 
+        // Print  All done!
+        // Print 'your final score is' +  clearTimeOut()
+        // Enter intials into form with a submit button, store score locally 
+        // When submit button is clicked navigate to the highscores page
+
     }
-    
+
 });
