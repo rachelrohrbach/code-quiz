@@ -18,7 +18,11 @@ $(document).ready(function () {
     $("#content").show();
     $("#questiondiv").hide();
     $("#scorediv").hide();
+
     var currentQuestionIndex = 0;
+    var timerEl = document.getElementById('timer');
+    var secondsLeft = 70;
+    var secondsOnQuestion = 15;
 
     $('#start').on('click', function () {
         $("#content").hide();
@@ -34,6 +38,7 @@ $(document).ready(function () {
         if (questions[currentQuestionIndex].correctAnswer === selectedAnswer) {
             $('#result').text('Correct!');
         } else {
+            secondsLeft -= 10;
             $('#result').text('Wrong!');
         }
 
@@ -47,12 +52,8 @@ $(document).ready(function () {
             populateQuestion(currentQuestionIndex);
         }
 
-        
     });
-    var timerEl = document.getElementById('timer');
-
-    var secondsLeft = 70;
-    var secondsOnQuestion = 15;
+    
 
     function setTime() {
         var timerInterval = setInterval(function () {
@@ -73,23 +74,21 @@ $(document).ready(function () {
                 var timeScore = secondsLeft;
                 clearInterval(timerInterval);
             }
-        
-            var finalScore =$('#score');
+
+            var finalScore = $('#score');
             finalScore.text('Your final score is ' + timeScore + '.');
             $('#score').append(finalScore);
-    
+
 
         }, 1000);
 
-       
+        var scoreBtn = $('<button />');
+        scoreBtn.text('Submit');
+        $('#score-button').append(scoreBtn);
+        $('#score-button').click(function () { window.location = 'scores.html' });
 
 
-
-        // after the final question OR if the time runs out replace the questionDiv with a new div 
-        // Print  All done!
-        // Print 'your final score is' +  clearTimeOut()
-        // Enter intials into form with a submit button, store score locally 
-        // When submit button is clicked navigate to the highscores page
+        // Store finalScore & user-initals as an object locally 
 
     }
 
