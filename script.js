@@ -13,21 +13,21 @@ function populateQuestion(indexOfQuestion) {
         answerBtn.addClass("answer-button");
     }
 }
-// display about quiz and start button
+// display quiz description and start button, hide other divs
 function showStartQuiz() {
     $("#content").show();
     $("#questiondiv").hide();
     $("#scorediv").hide();
     $('#highscoresdiv').hide();
 }
-// display the question(s) and answers
+// display the question(s) and answers, hide other divs
 function showQuestion() {
     $("#content").hide();
     $("#questiondiv").show();
     $("#scorediv").hide();
     $('#highscoresdiv').hide();
 }
-// display your score with input for your initials
+// display your score with input for your initials, hide other divs
 function showSubmitScore(timeScore) {
     $("#content").hide();
     $("#questiondiv").hide();
@@ -72,7 +72,7 @@ $(document).ready(function () {
         }
     });
 
-    // local storage
+    // restrict submit button click until something is entered in input field
     $('.submit-button').on('click', function () {
         var initials = $('#user-initals').val();
         if (initials != null &&
@@ -80,7 +80,8 @@ $(document).ready(function () {
             initials.length != 0) {
 
             var localHighScores = JSON.parse(localStorage.getItem('localHighScores'));
-
+        
+        // first check if there are any existing entries on highscore list
             if (localHighScores == null) {
                 localHighScores = [
                     {
@@ -123,7 +124,7 @@ $(document).ready(function () {
             showHighScores();
         }
     });
-
+    
     $('#back-button').on('click', function () {
         currentQuestionIndex = 0;
         secondsLeft = 75;
@@ -137,6 +138,7 @@ $(document).ready(function () {
         $('#recorded-score').empty();
     });
 
+    
     $('.highscore').on('click', function () {
         showHighScores();
     })
