@@ -16,8 +16,8 @@
 <body>
 
     <header>
-        <a class="highscore" href="scores.html">View Highscores</a>
-        <div id="timer">Time: </div>
+        <button class="highscore">View Highscores</button>
+        <div>Time: <span id="timer"></span></div>
         </div>
     </header>
 
@@ -30,23 +30,31 @@
         </div>
 
         <div id="questiondiv" class="jumbotron mx-auto">
-            <h3 id="question" class="display-5 text-center"></h3>
+            <h3 id="question" class="display-5 text-left"></h3>
             <div id="answer" class="text-center">
             </div>
             <hr />
-            <div id="result">
+            <div id="result" class="text-left">
             </div>
         </div>
 
         <div id="scorediv" class="jumbotron mx-auto">
-            <h3 class="display-5 text-left">All Done!</h3>
-            <p id="score" class="text-left"></p>
+            <h3 class="display-5 text-left mb-4">All Done!</h3>
+            <p class="text-left">Your final score is: <span id="score"></span></p>
             <form class="form-inline">
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Enter Initials:</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2">
-                <div id="score-button"></div>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="user-initals">
+                <button class="submit-button">Submit</button>
             </form>
         </div>
+
+        <div id="highscoresdiv" class="jumbotron mx-auto">
+            <h3 class="display-4 text-left">Highscores</h3>
+            <ol id="recorded-score" class="text-left"></ol>
+            <button id="back-button" class="btn btn-primary">Go Back</button>
+            <button id="clear-button" class="btn btn-primary">Clear Highscores</button>
+        </div>
+    
     </div>
 
 
