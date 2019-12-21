@@ -181,6 +181,8 @@ $(document).ready(function () {
             }
         }
 
+        clearInterval(timerInterval);
+
         $("#content").hide();
         $("#questiondiv").hide();
         $("#scorediv").hide();
