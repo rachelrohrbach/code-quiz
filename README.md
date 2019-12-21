@@ -8,7 +8,7 @@
 * [License](#license)
 
 ## General info
-This project is a timed code-related quiz that tests your knowledge. It consists of 5 total questions and gives the a total of 70 seconds to answer the 5 questions giving them 15 seconds for each, however if the incorrect answer is selected 10 seconds are deducted from the timer. The users score is the time remaining once they get to the last question or if the timer gets to 0. The user inputs their initials to save their score locally on a highscore list with up to 10 of the highest scores. The highscore list can also be cleared via clearing the local storage.  
+This project is a timed quiz that tests the user's code-related knowledge. It consists of 5 total questions and gives the user a total of 70 seconds to answer the 5 questions giving them 15 seconds for each, however if the incorrect answer is selected 10 seconds are deducted from the timer. The users score is the time remaining once they get to the last question or if the timer gets to 0. The user inputs their initials to save their score locally on a highscore list with up to 10 of the highest scores. The highscore list can also be cleared via clearing the local storage. I put the questions in a separate javascript file which allows for additional questions to be added to the quiz if desired.  
 	
 ## Technologies
 This project is created with: 
