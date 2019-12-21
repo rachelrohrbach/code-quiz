@@ -41,7 +41,7 @@ $(document).ready(function () {
     showStartQuiz();
 
     var currentQuestionIndex = 0;
-    var secondsLeft = 70;
+    var secondsLeft = 75;
     var secondsOnQuestion = 15;
     var timerInterval;
 
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
     $('#back-button').on('click', function () {
         currentQuestionIndex = 0;
-        secondsLeft = 70;
+        secondsLeft = 75;
         secondsOnQuestion = 15;
         $('#result').text('');
         showStartQuiz();
