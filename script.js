@@ -72,7 +72,7 @@ $(document).ready(function () {
         }
     });
 
-    // create object of corresponding initials & score and store it locally
+    // local storage
     $('.submit-button').on('click', function () {
         var initials = $('#user-initals').val();
         if (initials != null &&
