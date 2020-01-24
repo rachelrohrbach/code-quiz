@@ -1,4 +1,4 @@
-# My Portfolio
+# Code Quiz
 
 ## Table of contents
 * [General info](#general-info)
@@ -20,7 +20,7 @@ This project is created with:
 
 ## Screenshot
 ![project screenshot](assets/code-quiz-screenshot.png)
-Link to my deployed github page: https://rachelrohrbach.github.io/homework-4/
+Link to my deployed github page: https://rachelrohrbach.github.io/code-quiz/
 
 
 # Credits
